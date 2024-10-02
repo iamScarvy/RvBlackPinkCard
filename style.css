@@ -1,0 +1,161 @@
+:root{
+  --card-height: 200px;
+  --card-width: calc(var(--card-height)/1.5);
+    
+}
+body{
+    background-image: url("bg3.png") ;
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    
+}
+
+.header{
+    margin-left: -8px;
+    background-color: #160f16;
+    opacity: .8;
+    width: 100%;
+    margin-top: -16px;
+    position: fixed;
+    top: 0;
+    padding: 30px;
+
+}   
+
+.body{
+    /*background-color: #221c2a;*/
+    margin-top:     84px;
+    margin-left: -8px;
+    min-height: 595px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+     position: absolute;
+       
+}
+
+.footer {
+    margin-left: -8px;
+    background-color: #160f16;
+    opacity: .8;
+    height: 100px;
+    width: 100%; 
+    margin-top: 679px;   
+    position:fixed;
+    bottom: 0;
+}
+
+.footerss{
+    text-align: center;
+    
+    font-family: 'Times New Roman', Times, serif;
+  font-size: 10px;
+
+
+}
+
+.card {
+    width: var(--card-width);
+    height: var(--card-height);
+    position: relative;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 36px;
+    perspective: 2500px;
+    right: 4%;
+    top: -10px;
+   
+  }
+  
+  .cover-image {
+    justify-content: space-around;
+    width: 150%;
+    height: 150%;
+    object-fit: cover;
+    margin-left: 40px;
+    
+  }
+  
+  .character {
+    width: 250px;
+   
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    top: 20px;
+   /* z-index: -1;*/
+    margin-left: 130px;
+    margin-top: 16px;
+
+    
+  }
+
+  .wrapper {
+    transition: all 0.5s;
+    position: absolute;
+    top: 25px;
+    width: 75%;
+    z-index: -1;
+  }
+
+  .card:hover .wrapper {
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+   /*filter: blur(1px)*/
+    filter: brightness(30%)
+   
+  }
+  
+  .card:hover .wrapper::before,
+  
+  .wrapper::after {
+    opacity: 1;
+   
+  }
+  
+  .card:hover .wrapper::after {
+  height: 120px;
+  backdrop-filter: blur(100%);
+
+  }
+
+  .title {
+   opacity: 0;
+    position: relative;
+   /* top: 240px;
+    left: 26%;
+    width: 400%;*/
+    left: -7%;
+    width: 200%;
+    top: 20px;
+
+    transition: transform 0.5s;
+    z-index: 2;
+   
+  }
+  .card:hover .title {
+    text-align: center;
+    transform: translate3d(0%, -50px, 550px);
+    opacity: 1;
+  }
+
+  .card:hover .character {
+    opacity: 1;
+    transform: translate3d(0%, -30%, 380px);
+    position: absolute;
+    top:50px;
+    
+  }
+
+
+.starter{
+  width: 500px;
+  
+}
